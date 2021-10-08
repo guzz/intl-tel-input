@@ -49,6 +49,8 @@ const defaults = {
   separateDialCode: false,
   // specify the path to the libphonenumber script to enable validation/formatting
   utilsScript: '',
+  // indicate if is a rtl language
+  rtl: false,
 };
 // https://en.wikipedia.org/wiki/List_of_North_American_Numbering_Plan_area_codes#Non-geographic_area_codes
 const regionlessNanpNumbers = ['800', '822', '833', '844', '855', '866', '877', '880', '881', '882', '883', '884', '885', '886', '887', '888', '889'];
@@ -979,9 +981,10 @@ class Iti {
       this.selectedDialCode.innerHTML = dialCode;
       // offsetWidth is zero if input is in a hidden container during initialisation
       const selectedFlagWidth = this.selectedFlag.offsetWidth || this._getHiddenSelectedFlagWidth();
+      const direction = this.options.rlt ? 'Right' : 'Left';
 
       // add 6px of padding after the grey selected-dial-code box, as this is what we use in the css
-      this.telInput.style.paddingLeft = `${selectedFlagWidth + 6}px`;
+      this.telInput.style[`padding${direction}`] = `${selectedFlagWidth + 6}px`;
     }
 
     // and the input's placeholder

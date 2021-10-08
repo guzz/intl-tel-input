@@ -106,7 +106,9 @@
             // display the country dial code next to the selected flag so it's not part of the typed number
             separateDialCode: false,
             // specify the path to the libphonenumber script to enable validation/formatting
-            utilsScript: ""
+            utilsScript: "",
+            // indicate if is a rtl language
+            rtl: false
         };
         // https://en.wikipedia.org/wiki/List_of_North_American_Numbering_Plan_area_codes#Non-geographic_area_codes
         var regionlessNanpNumbers = [ "800", "822", "833", "844", "855", "866", "877", "880", "881", "882", "883", "884", "885", "886", "887", "888", "889" ];
@@ -932,8 +934,9 @@
                         this.selectedDialCode.innerHTML = dialCode;
                         // offsetWidth is zero if input is in a hidden container during initialisation
                         var selectedFlagWidth = this.selectedFlag.offsetWidth || this._getHiddenSelectedFlagWidth();
+                        var direction = this.options.rlt ? "Right" : "Left";
                         // add 6px of padding after the grey selected-dial-code box, as this is what we use in the css
-                        this.telInput.style.paddingLeft = "".concat(selectedFlagWidth + 6, "px");
+                        this.telInput.style["padding".concat(direction)] = "".concat(selectedFlagWidth + 6, "px");
                     }
                     // and the input's placeholder
                     this._updatePlaceholder();

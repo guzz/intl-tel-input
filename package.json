@@ -1,5 +1,5 @@
 {
-  "name": "intl-tel-input",
+  "name": "@guzzj/intl-tel-input",
   "version": "17.0.13",
   "description": "A JavaScript plugin for entering and validating international telephone numbers",
   "keywords": [
@@ -15,6 +15,9 @@
   ],
   "license": "MIT",
   "author": "Jack O'Connor (http://jackocnr.com)",
+  "engines": {
+    "node": "^14"
+  },
   "devDependencies": {
     "@babel/core": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
