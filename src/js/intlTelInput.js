@@ -981,7 +981,7 @@ class Iti {
       this.selectedDialCode.innerHTML = dialCode;
       // offsetWidth is zero if input is in a hidden container during initialisation
       const selectedFlagWidth = this.selectedFlag.offsetWidth || this._getHiddenSelectedFlagWidth();
-      const direction = this.options.rlt ? 'Right' : 'Left';
+      const direction = this.options.rtl ? 'Right' : 'Left';
 
       // add 6px of padding after the grey selected-dial-code box, as this is what we use in the css
       this.telInput.style[`padding${direction}`] = `${selectedFlagWidth + 6}px`;

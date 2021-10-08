@@ -1,5 +1,5 @@
 /*
- * International Telephone Input v17.0.13
+ * International Telephone Input v17.0.14
  * https://github.com/jackocnr/intl-tel-input.git
  * Licensed under the MIT license
  */
@@ -934,7 +934,7 @@
                         this.selectedDialCode.innerHTML = dialCode;
                         // offsetWidth is zero if input is in a hidden container during initialisation
                         var selectedFlagWidth = this.selectedFlag.offsetWidth || this._getHiddenSelectedFlagWidth();
-                        var direction = this.options.rlt ? "Right" : "Left";
+                        var direction = this.options.rtl ? "Right" : "Left";
                         // add 6px of padding after the grey selected-dial-code box, as this is what we use in the css
                         this.telInput.style["padding".concat(direction)] = "".concat(selectedFlagWidth + 6, "px");
                     }
@@ -1343,7 +1343,7 @@
         // default options
         intlTelInputGlobals.defaults = defaults;
         // version
-        intlTelInputGlobals.version = "17.0.13";
+        intlTelInputGlobals.version = "17.0.14";
         // convenience wrapper
         return function(input, options) {
             var iti = new Iti(input, options);
